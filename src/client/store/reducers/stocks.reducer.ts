@@ -13,7 +13,7 @@ const stocksReducer = (state = initialState, action: StockAction) => {
   case GET_STOCK_DATA:
     return {
       ...state,
-      stocks: [...state.stocks, action.payload.stockData]
+      stocks: [...state.stocks, action.payload.stockData],
     }
   case REMOVE_STOCK:
     // eslint-disable-next-line no-case-declarations
