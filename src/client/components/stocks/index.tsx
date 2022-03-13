@@ -26,8 +26,8 @@ const Stocks: FC = () => {
             <TableCell key={header}>{header}</TableCell>
           )}
           <TableBody>
-            {stockData.map((item) => (
-              <TableRow key={item.name}>
+            {stockData.map((stock) => (
+              <TableRow key={stock.name}>
                 <TableCell>
                   <FontAwesomeIcon
                     icon={faX}
@@ -36,18 +36,18 @@ const Stocks: FC = () => {
                     onClick={(e) => onDelete(e)}
                   />
                 </TableCell>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>{item.symbol}</TableCell>
+                <TableCell>{stock.name}</TableCell>
+                <TableCell>{stock.symbol}</TableCell>
                 <TableCell>
-                  ${item.price.toFixed(2)} ({item.changePercent.toFixed(2)}%)
+                  ${stock.price.toFixed(2)} ({stock.changePercent.toFixed(2)}%)
                   &nbsp;
                   <FontAwesomeIcon
-                    icon={item.changePercent > 0 ? faArrowUp : faArrowDown}
-                    color={item.changePercent > 0 ? 'green' : 'red'}
+                    icon={stock.changePercent > 0 ? faArrowUp : faArrowDown}
+                    color={stock.changePercent > 0 ? 'green' : 'red'}
                     onClick={(e) => onDelete(e)}
                   /></TableCell>
-                <TableCell>${item.high.toFixed(2)}</TableCell>
-                <TableCell>${item.low.toFixed(2)}</TableCell>
+                <TableCell>${stock.high.toFixed(2)}</TableCell>
+                <TableCell>${stock.low.toFixed(2)}</TableCell>
               </TableRow>
             ))}
           </TableBody>
