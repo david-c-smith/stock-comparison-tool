@@ -1,0 +1,29 @@
+// React Select Virtualized styling
+
+$main-gray: #30363A;
+$light-gray: #50575c;
+
+.select__control {
+    background: $main-gray !important;
+    margin-top: 20px;
+}
+
+.input {
+    color: white !important;
+}
+
+.ReactVirtualized__Grid.ReactVirtualized__List {
+    background: $main-gray;
+}
+
+.fast-option-focused:hover {
+    background: $light-gray;
+}
+
+.select__input {
+    color: white !important;
+}
+
+.fast-option-focused.fast-option {
+    background: $light-gray;
+}

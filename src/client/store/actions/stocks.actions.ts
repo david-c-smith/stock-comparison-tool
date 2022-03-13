@@ -30,7 +30,6 @@ export const getCompanyQuote = async (symbol: string, name: string) => {
       eps: parseFloat(epsData.EPS),
       name: name,
     }
-
     return {
       type: GET_STOCK_DATA,
       payload: {
@@ -42,11 +41,11 @@ export const getCompanyQuote = async (symbol: string, name: string) => {
   }
 }
 
-export const removeStock = (data: { symbol: string }) => {
+export const removeStock = (symbol: string) => {
   return {
     type: REMOVE_STOCK,
     payload: {
-      symbol: data.symbol,
+      symbol: symbol,
     },
   }
 }

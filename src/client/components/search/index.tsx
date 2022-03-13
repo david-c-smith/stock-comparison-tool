@@ -1,13 +1,18 @@
 import React, { FC, Fragment, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Select from 'react-select-virtualized'
+import { useAppSelector } from '../../../hooks'
 import { getAllTickerSymbols } from '../../services/service'
 import { getCompanyQuote } from '../../store/actions/stocks.actions'
+import './search.scss'
 
 // Renders a search dropdown for finding stocks
 const Search: FC = () => {
   const dispatch = useDispatch()
+  const stocks = useAppSelector((state) => state.stocks)
   const [dropdownOptions, setDropdownOptions] = useState([])
+
+  const reachedStockLimit = Object.keys(stocks).length >= 3
 
   useEffect(() => {
     const getDropdownOptions = async () => {
@@ -17,7 +22,6 @@ const Search: FC = () => {
         name: stock.name,
         label: `${stock.symbol} (${stock.name})`
       }))
-
       setDropdownOptions(formattedDropdownOptions)
     }
 
@@ -36,6 +40,7 @@ const Search: FC = () => {
         className="basic-single"
         classNamePrefix="select"
         value=""
+        isDisabled={reachedStockLimit}
         name="search"
         placeholder="Enter up to 3 stocks to compare the current stock prices"
         options={dropdownOptions}

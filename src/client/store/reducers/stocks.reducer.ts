@@ -1,10 +1,11 @@
+import { stock } from '../../../types'
 import { StockAction } from '../actions/stocks.actions'
 
 export const GET_STOCK_DATA = 'GET_STOCK_DATA'
 export const REMOVE_STOCK = 'REMOVE_STOCK'
 
 const initialState = {
-  stocks: [],
+  stocks: [] as stock[],
 }
 
 const stocksReducer = (state = initialState, action: StockAction) => {
@@ -12,10 +13,7 @@ const stocksReducer = (state = initialState, action: StockAction) => {
   case GET_STOCK_DATA:
     return {
       ...state,
-      stockData: {
-        ...state.stocks,
-        [action.payload.stockData.symbol]: action.payload.stockData,
-      },
+      stocks: [...state.stocks, action.payload.stockData]
     }
   case REMOVE_STOCK:
     // eslint-disable-next-line no-case-declarations

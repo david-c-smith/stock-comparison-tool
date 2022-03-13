@@ -1,17 +1,17 @@
 import axios from 'axios'
 
-// I would likely use AWS Secrets Manager, just leaving here for convenience
-const apiKey = ['DBYEYWX6Y311OLJZ']
+// I would likely use AWS Secrets Manager, leaving it here for convenience
+const apiKey = 'DBYEYWX6Y311OLJZ'
 
 /**
  * @function getAllTickerSymbols
  * @description Retrieves a list of all NASDAQ ticker symbols to circumvent the
- * harsh free tier rate limiting of the Alpha Vantage API. Primarily used to enable a cleaner
+ * free tier rate limiting of the Alpha Vantage API. Primarily used to enable a cleaner
  * typeahead user experience when searching for stocks
  * @param {string} symbol
  *
 */
-export const getAllTickerSymbols = async ():Promise<any> => {
+export const getAllTickerSymbols = async () => {
   const response = await axios.get('https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/nasdaq/nasdaq_full_tickers.json')
   return response.data
 }

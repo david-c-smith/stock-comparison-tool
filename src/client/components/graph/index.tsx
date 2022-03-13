@@ -3,35 +3,54 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { Container } from '@mui/material'
 import { useAppSelector } from '../../../hooks'
+import './graph.scss'
 
+// Renders a graphical representation of EPS data
 const Graph: FC = () => {
   const stocks = useAppSelector((state) => state.stocks)
-  const categories = Object.keys(stocks)
-  const epsData = Object.values(stocks)
+  const categories = Object.values(stocks).map((stock) => stock.symbol)
+  const epsData = Object.values(stocks).map((stock) => stock.eps)
 
   const options = {
     chart: {
       type: 'bar'
     },
+    plotOptions: {
+      series: {
+        pointWidth: 55
+      }
+    },
     title: {
-      text: 'Stock EPS Data'
+      text: 'Stock EPS Data',
+      style: {
+        color: 'white',
+      }
     },
     xAxis: {
-      categories: categories
+      categories: categories,
+      labels: {
+        style: {
+          color: 'white'
+        }
+      }
     },
     yAxis: {
       min: 0,
+      gridLineColor: 'transparent',
       title: {
-        text: ''
+        text: 'EPS (Earnings Per Share)',
+        style: {
+          color: 'white',
+        }
       }
     },
     credits: {
       enabled: false
     },
     legend: {
-      reversed: true
+      enabled: false
     },
-    series: epsData
+    series: [{ data: epsData, name: 'Current EPS' }]
   }
 
   return (
