@@ -1,0 +1,38 @@
+$main-gray: #30363A;
+$light-gray: #50575c;
+
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../public/avenir.ttf"),
+    url("../public/avenir.ttf");
+}
+
+* {
+    font-family: "Avenir";
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+// React Select Virtualized styling
+
+.select__control {
+    background: $main-gray !important;
+    margin-top: 20px;
+}
+
+.input {
+    color: white !important;
+}
+
+.ReactVirtualized__Grid.ReactVirtualized__List {
+    background: $main-gray;
+}
+
+.fast-option-focused:hover {
+    background: $light-gray;
+}
+
