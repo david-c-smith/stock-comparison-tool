@@ -1,2 +1,12 @@
-.vscode/settings.json
+# System/IDE files
 .DS_Store
+.vscode/settings.json
+
+.idea
+
+# Dependencies
+node_modules
+
+# Generated code
+coverage
+public
