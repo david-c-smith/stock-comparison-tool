@@ -13,10 +13,21 @@ const initialState = {
 const stocksReducer = (state = initialState, action: StockAction) => {
   switch (action.type) {
   case GET_STOCK_DATA:
+    // User already added the stock to their watchlist
+    if (
+      state.stocks
+        .map((stock) => stock.symbol)
+        .includes(action.payload.stockData.symbol)
+    ) {
+      return {
+        ...state,
+        error: `${action.payload.stockData.symbol} has already been added to your watchlist`,
+      }
+    }
     return {
       ...state,
       stocks: [...state.stocks, action.payload.stockData],
-      error: ''
+      error: '',
     }
   case GET_ERROR:
     // eslint-disable-next-line no-case-declarations
