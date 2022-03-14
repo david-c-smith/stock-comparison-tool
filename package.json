@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": false,
   "proxy": "https://alphavantage.co/",
-  "homepage": "https://stock-comparison-tool.herokuapp.com/",
   "dependencies": {
     "@babel/runtime": "^7.13.7",
     "@emotion/react": "^11.8.2",
