@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stock-comparison-tool/static/css/main.a7cae92e.css",
-    "main.js": "/stock-comparison-tool/static/js/main.25942a5e.js",
+    "main.js": "/stock-comparison-tool/static/js/main.7e741e2b.js",
     "static/media/avenir.ttf": "/stock-comparison-tool/static/media/avenir.0bfb049d9455e81fd1da.ttf",
     "index.html": "/stock-comparison-tool/index.html",
     "main.a7cae92e.css.map": "/stock-comparison-tool/static/css/main.a7cae92e.css.map",
-    "main.25942a5e.js.map": "/stock-comparison-tool/static/js/main.25942a5e.js.map"
+    "main.7e741e2b.js.map": "/stock-comparison-tool/static/js/main.7e741e2b.js.map"
   },
   "entrypoints": [
     "static/css/main.a7cae92e.css",
-    "static/js/main.25942a5e.js"
+    "static/js/main.7e741e2b.js"
   ]
 }
