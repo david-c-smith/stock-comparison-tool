@@ -36,8 +36,7 @@ In the project root directory:
 
 #### For development:
 
-* Node.js
-* npm
+* Node/npm
 
 #### For deployment:
 

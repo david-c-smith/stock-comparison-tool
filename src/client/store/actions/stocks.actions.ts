@@ -1,6 +1,10 @@
 import { stock } from '../../../types'
 import { getGlobalQuote, getOverview } from '../../services/service'
-import { GET_STOCK_DATA, REMOVE_STOCK } from '../reducers/stocks.reducer'
+import {
+  GET_ERROR,
+  GET_STOCK_DATA,
+  REMOVE_STOCK,
+} from '../reducers/stocks.reducer'
 
 export type StockAction =
   | {
@@ -10,12 +14,25 @@ export type StockAction =
       };
     }
   | {
+      type: 'GET_ERROR';
+      payload: {
+        error: string;
+      };
+    }
+  | {
       type: 'REMOVE_STOCK';
       payload: {
         symbol: string;
       };
     };
 
+/**
+ * @function getCompanyQuote
+ * @description Retrieves global quote and eps data for a specified stock
+ * @param {string} symbol
+ * @param {string} name
+ *
+ */
 export const getCompanyQuote = async (symbol: string, name: string) => {
   try {
     const stockQuote = await getGlobalQuote(symbol)
@@ -37,12 +54,21 @@ export const getCompanyQuote = async (symbol: string, name: string) => {
       },
     }
   } catch (error) {
-    //TODO Handle errors
-    // eslint-disable-next-line no-console
-    console.log(error)
+    return {
+      type: GET_ERROR,
+      payload: {
+        error: 'Failed to retrieve stock data.',
+      },
+    }
   }
 }
 
+/**
+ * @function removeStock
+ * @description Removes a pinned stock
+ * @param {string} symbol
+ *
+ */
 export const removeStock = (symbol: string) => {
   return {
     type: REMOVE_STOCK,

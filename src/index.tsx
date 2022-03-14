@@ -4,11 +4,11 @@ import { Provider } from 'react-redux'
 import App from './App'
 import store from './store'
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+/**
+* The easiest way of getting the State type is to define
+* the root reducer in advance and extract its ReturnType.
+*/
 export type RootState = ReturnType<typeof store.getState>;
-
-// Inferred type: {stocks}
-export type AppDispatch = typeof store.dispatch;
 
 ReactDOM.render(
   <Provider store={store}>
