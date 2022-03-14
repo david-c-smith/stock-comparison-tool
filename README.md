@@ -1,9 +1,9 @@
 # stock-comparison-tool
-Stock-comparison-tool is a React application, which leverages the [AlphaVantage](https://alphavantage.co/) API in order to visualize and compare stock data.
+Why use such well established stock analysis tools such as TD Ameritrade, Robinhood, or Morningstar when you could use a _sleek, minimalistic_ stock tool like **stock-comparison-tool**? Stock-comparison-tool is a React application, which leverages the [AlphaVantage](https://alphavantage.co/) API in order to visualize and compare stock data.
 
 <img width="1512" alt="image" src="https://user-images.githubusercontent.com/17208971/158216926-6137c201-ecb9-419f-af95-bcaa521fbf35.png">
 
-A deployed version of the application can be found [here](https://david-c-smith.github.io/stock-comparison-tool/)
+A deployed version of the application can be found [here](https://stock-comparison-tool.herokuapp.com/)
 
 Some notable technologies used in this project are:
 
@@ -17,7 +17,7 @@ Some notable technologies used in this project are:
 - React Select Virtualized
 - http-proxy-middleware
 - Axios 
-- Github Actions + Github Pages
+- Github Actions + Heroku 
 
 ### Table of Contents
 **[Getting Started](#getting-started)**<br>
@@ -43,7 +43,7 @@ In the project root directory:
 
 #### For deployment:
 
-Deployment steps can be found in the Github Actions workflow located at `/.github/workflows/test.yml`.
+CI/CD steps can be found in the Github Actions workflow located at `/.github/workflows/test.yml`.
 
 ## Development
 
@@ -61,8 +61,5 @@ Note: Whenever new code is pushed to `main`, tests will automatically run in the
 
 ## Deployment
 
-Everytime you push to `main`, the deployment script will build the React application and push the latest code to the auto-generated `gh-pages` branch. 
-
-However, to manually deploy to the `gh-pages` branch from your local machine:
-`npm run deploy`.
+Everytime you push to `main`, the `test.yml` Github Actions script will trigger, building the application and running tests. Upon successful completion, a deployment will trigger in Heroku. Hosted [here](https://stock-comparison-tool.herokuapp.com/)
 
