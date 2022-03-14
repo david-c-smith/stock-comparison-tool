@@ -42,6 +42,11 @@ const Graph: FC = () => {
         style: {
           color: 'white',
         }
+      },
+      labels: {
+        style: {
+          color: 'white'
+        }
       }
     },
     credits: {

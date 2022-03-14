@@ -18,7 +18,7 @@ const stocksReducer = (state = initialState, action: StockAction) => {
   case REMOVE_STOCK:
     // eslint-disable-next-line no-case-declarations
     const stateCopy = { ...state }
-    delete stateCopy.stocks[action.payload.symbol]
+    stateCopy.stocks = stateCopy.stocks.filter(stock => stock.symbol !== action.payload.symbol)
     return { ...stateCopy }
   default:
     return { ...state }

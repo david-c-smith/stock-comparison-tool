@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp, faX } from '@fortawesome/free-solid-svg-icons'
 import './stocks.scss'
+import { stock } from '../../../types'
 
 // Renders a tabular representation of multiple stocks
 const Stocks: FC = () => {
@@ -14,8 +15,8 @@ const Stocks: FC = () => {
   const headerValues = ['', 'Company', 'Symbol', 'Price', 'High', 'Low']
 
   // Handle stock deletion
-  const onDelete = (e) => {
-    dispatch(removeStock(e))
+  const onDelete = (symbol: string) => {
+    dispatch(removeStock(symbol))
   }
 
   return (
@@ -26,14 +27,14 @@ const Stocks: FC = () => {
             <TableCell key={header}>{header}</TableCell>
           )}
           <TableBody>
-            {stockData.map((stock) => (
+            {stockData.map((stock: stock) => (
               <TableRow key={stock.name}>
                 <TableCell>
                   <FontAwesomeIcon
                     icon={faX}
                     color='red'
                     style={{ cursor: 'pointer' }}
-                    onClick={(e) => onDelete(e)}
+                    onClick={() => onDelete(stock.symbol)}
                   />
                 </TableCell>
                 <TableCell>{stock.name}</TableCell>
@@ -44,7 +45,6 @@ const Stocks: FC = () => {
                   <FontAwesomeIcon
                     icon={stock.changePercent > 0 ? faArrowUp : faArrowDown}
                     color={stock.changePercent > 0 ? 'green' : 'red'}
-                    onClick={(e) => onDelete(e)}
                   /></TableCell>
                 <TableCell>${stock.high.toFixed(2)}</TableCell>
                 <TableCell>${stock.low.toFixed(2)}</TableCell>
