@@ -124,7 +124,7 @@ describe('Test stock reducer', () => {
           low: 0.53,
         },
       ],
-      error: 'GOOG has already been added to your watchlist',
+      error: 'GOOG has already been added to your watchlist.',
     })
   })
 

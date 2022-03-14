@@ -21,7 +21,7 @@ const stocksReducer = (state = initialState, action: StockAction) => {
     ) {
       return {
         ...state,
-        error: `${action.payload.stockData.symbol} has already been added to your watchlist`,
+        error: `${action.payload.stockData.symbol} has already been added to your watchlist.`,
       }
     }
     return {
