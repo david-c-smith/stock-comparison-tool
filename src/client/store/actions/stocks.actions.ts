@@ -37,6 +37,7 @@ export const getCompanyQuote = async (symbol: string, name: string) => {
       },
     }
   } catch (error) {
+    //TODO Handle errors
     console.log(error)
   }
 }

@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react'
 import { useAppSelector } from '../../../hooks'
 import { removeStock } from '../../store/actions/stocks.actions'
-import { Table, TableCell, TableRow, TableBody, Container } from '@mui/material'
+import { Table, TableCell, TableRow, TableBody, TableContainer, TableHead } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp, faX } from '@fortawesome/free-solid-svg-icons'
@@ -18,14 +18,17 @@ const Stocks: FC = () => {
   const onDelete = (symbol: string) => {
     dispatch(removeStock(symbol))
   }
-
   return (
     <Fragment>
-      <Container>
+      <TableContainer>
         <Table>
-          {headerValues.map(header =>
-            <TableCell key={header}>{header}</TableCell>
-          )}
+          <TableHead>
+            <TableRow>
+              {headerValues.map(header =>
+                <TableCell key={header}>{header}</TableCell>
+              )}
+            </TableRow>
+          </TableHead>
           <TableBody>
             {stockData.map((stock: stock) => (
               <TableRow key={stock.name}>
@@ -52,7 +55,7 @@ const Stocks: FC = () => {
             ))}
           </TableBody>
         </Table>
-      </Container>
+      </TableContainer>
     </Fragment>)
 }
 

@@ -1,9 +1,9 @@
 {
-  "homepage": "https://david-c-smith.github.io/stock-comparison-tool",
   "name": "stock-comparison-tool",
   "version": "0.1.0",
   "private": false,
-  "proxy": "https://www.alphavantage.co/",
+  "proxy": "https://alphavantage.co/",
+  "homepage": "https://david-c-smith.github.io/stock-comparison-tool",
   "dependencies": {
     "@babel/runtime": "^7.13.7",
     "@emotion/react": "^11.8.2",
@@ -43,7 +43,8 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}'"
   },
@@ -69,10 +70,9 @@
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.1",
     "@types/react-router-dom": "^5.1.7",
-    "babel-eslint": "^10.1.0",
-    "flow-babel-webpack-plugin": "^1.1.1",
     "gh-pages": "^3.2.3",
     "jest": "^27.5.1",
-    "ts-jest": "^27.1.3"
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.7.0"
   }
 }
