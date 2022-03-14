@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddca28cc.css",
-    "main.js": "/static/js/main.7e741e2b.js",
-    "static/media/avenir.ttf": "/static/media/avenir.0bfb049d9455e81fd1da.ttf",
-    "index.html": "/index.html",
-    "main.ddca28cc.css.map": "/static/css/main.ddca28cc.css.map",
-    "main.7e741e2b.js.map": "/static/js/main.7e741e2b.js.map"
+    "main.css": "./static/css/main.da90ccfe.css",
+    "main.js": "./static/js/main.c126c336.js",
+    "static/media/avenir.ttf": "./static/media/avenir.0bfb049d9455e81fd1da.ttf",
+    "index.html": "./index.html",
+    "main.da90ccfe.css.map": "./static/css/main.da90ccfe.css.map",
+    "main.c126c336.js.map": "./static/js/main.c126c336.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddca28cc.css",
-    "static/js/main.7e741e2b.js"
+    "static/css/main.da90ccfe.css",
+    "static/js/main.c126c336.js"
   ]
 }
