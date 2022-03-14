@@ -35,7 +35,6 @@ const Graph: FC = () => {
       }
     },
     yAxis: {
-      min: 0,
       gridLineColor: 'transparent',
       title: {
         text: 'EPS (Earnings Per Share)',
