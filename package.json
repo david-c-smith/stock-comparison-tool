@@ -2,7 +2,6 @@
   "name": "stock-comparison-tool",
   "version": "0.1.0",
   "private": false,
-  "proxy": "https://alphavantage.co/",
   "homepage": ".",
   "dependencies": {
     "@babel/runtime": "^7.13.7",
