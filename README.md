@@ -1,4 +1,5 @@
 # stock-comparison-tool
+A deployed version of the application can be found [here](https://david-c-smith.github.io/stock-comparison-tool/)
 
 Stock-comparison-tool is a React application, which leverages the [AlphaVantage](https://alphavantage.co/) API in order to visualize and compare stock data.
 
