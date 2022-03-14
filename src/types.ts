@@ -1,5 +1,3 @@
-import { StockAction } from './client/store/actions/stocks.actions'
-
 export interface stock {
   symbol: string
   price: number
@@ -13,5 +11,3 @@ export interface stock {
 export type stocks = {
   stocks?: stock[]
 };
-
-export type dispatchActions = StockAction
