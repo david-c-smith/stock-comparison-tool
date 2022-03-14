@@ -3,7 +3,7 @@ Why use such well established stock analysis tools such as TD Ameritrade, Robinh
 
 <img width="1512" alt="image" src="https://user-images.githubusercontent.com/17208971/158216926-6137c201-ecb9-419f-af95-bcaa521fbf35.png">
 
-A deployed version of the application can be found [here](https://stock-comparison-tool.herokuapp.com/)
+A deployed version of the application can be found [here](https://stock-comparison-tool.herokuapp.com/) (Note: currently experiencing proxying issue through Heroku)
 
 Some notable technologies used in this project are:
 
