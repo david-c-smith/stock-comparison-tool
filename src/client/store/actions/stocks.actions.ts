@@ -38,6 +38,7 @@ export const getCompanyQuote = async (symbol: string, name: string) => {
     }
   } catch (error) {
     //TODO Handle errors
+    // eslint-disable-next-line no-console
     console.log(error)
   }
 }

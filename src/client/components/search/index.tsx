@@ -32,6 +32,7 @@ const Search: FC = () => {
   }, [])
 
   // Captures search bar input
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSearchChange = async (data: any) => {
     dispatch(await getCompanyQuote(data.value, data.name))
   }
@@ -51,6 +52,7 @@ const Search: FC = () => {
         name='search'
         placeholder='Enter up to 3 stocks to compare the current stock prices'
         options={dropdownOptions}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onChange={(e: any) => onSearchChange(e)}
       />
     </Fragment>
