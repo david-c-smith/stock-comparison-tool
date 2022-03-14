@@ -1,4 +1,5 @@
 {
+  "homepage": "https://david-c-smith.github.io/stock-comparison-tool",
   "name": "stock-comparison-tool",
   "version": "0.1.0",
   "private": false,
@@ -38,6 +39,8 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -68,6 +71,7 @@
     "@types/react-router-dom": "^5.1.7",
     "babel-eslint": "^10.1.0",
     "flow-babel-webpack-plugin": "^1.1.1",
+    "gh-pages": "^3.2.3",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.3"
   }
